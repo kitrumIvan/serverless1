@@ -1,35 +1,22 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import { Amplify } from 'aws-amplify'
 
-function App() {
-  const [count, setCount] = useState(0)
+import { Authenticator, useAuthenticator } from '@aws-amplify/ui-react'
+import './App.css'
+import '@aws-amplify/ui-react/styles.css'
+
+import awsExports from './aws-exports'
+import Home from './Home'
+
+Amplify.configure(awsExports)
+
+export default function App () {
+  const { authStatus } = useAuthenticator(context => [context.authStatus])
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    <div className="App-header">
+      {authStatus === 'configuring' && 'Loading...'}
+      {authStatus !== 'authenticated' ? <Authenticator/> : <Home/>}
+    </div>
   )
 }
-
-export default App
+//https://twnae07t06.execute-api.us-east-1.amazonaws.com/dev

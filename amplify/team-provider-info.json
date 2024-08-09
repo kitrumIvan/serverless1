@@ -1,0 +1,33 @@
+{
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-serveless1-dev-c4bb8-authRole",
+      "UnauthRoleArn": "arn:aws:iam::211125293383:role/amplify-serveless1-dev-c4bb8-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::211125293383:role/amplify-serveless1-dev-c4bb8-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-serveless1-dev-c4bb8-deployment",
+      "UnauthRoleName": "amplify-serveless1-dev-c4bb8-unauthRole",
+      "StackName": "amplify-serveless1-dev-c4bb8",
+      "StackId": "arn:aws:cloudformation:eu-north-1:211125293383:stack/amplify-serveless1-dev-c4bb8/9467d8d0-5654-11ef-a236-0a0c6352641f",
+      "AmplifyAppId": "dyib1yvpg4gps",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-serveless1-dev-c4bb8-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
+    },
+    "categories": {
+      "function": {
+        "serveless17679e8e4": {
+          "deploymentBucketName": "amplify-serveless1-dev-c4bb8-deployment",
+          "s3Key": "amplify-builds/serveless17679e8e4-61436562306a75364939-build.zip"
+        }
+      },
+      "auth": {
+        "serveless10b87af970b87af97": {}
+      },
+      "storage": {
+        "users": {}
+      },
+      "api": {
+        "usersApi": {}
+      }
+    }
+  }
+}
